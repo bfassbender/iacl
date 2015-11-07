@@ -46,6 +46,14 @@ angular.module('iaclApp').controller("MainController", function () {
                 card: 'img/ia/heroes/jyn_odan.jpg',
                 portrait: 'img/ia/heroes/jyn_odan-portrait.jpg'
             }
+        },
+        {
+            name: "Mak Eshka'rey",
+            wave: 'Starter Box',
+            images: {
+                card: 'img/ia/heroes/mak_eshkarey.jpg',
+                portrait: 'img/ia/heroes/mak_eshkarey-portrait.jpg'
+            }
         }
     ];
 
