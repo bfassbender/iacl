@@ -1,8 +1,8 @@
 {
-  "name": "iacl",
-  "description": "IACL - an Imperial Assault Campaign Logger",
+  "name": "angular-seed",
+  "description": "A starter project for AngularJS",
   "version": "0.0.1",
-  "homepage": "https://github.com/bknobloch/iacl",
+  "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "private": true,
   "dependencies": {
