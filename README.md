@@ -2,7 +2,7 @@
 
 # IACL - an Imperial Assault Campaign Logger
 
-This project is an campaign logger for Fantasy Flight's Imperial Assault board game.
+This project is an campaign logger for [Fantasy Flight's Imperial Assault] (https://www.fantasyflightgames.com/en/products/star-wars-imperial-assault) board game.
 I'm using it for two purposes. Firstly to create an easy to use webbased campaign log for that game. And secondly to educate myself on building dynamic webapps with AngularJS and Twitter Bootstrap.
 
 ## Contributing
