@@ -1,30 +1,44 @@
 /* app css stylesheet */
+@font-face {
+  font-family: kimberley;
+  src: url("fonts/kimberley bl.ttf"); }
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
+@font-face {
+  font-family: EurostileStandard;
+  src: url("fonts/EurostileLTStd.otf"); }
 
-.menu:before {
-  content: "[";
-}
+@font-face {
+  font-family: EurostileStandardBold;
+  src: url("fonts/EurostileLTStd-Bold.otf"); }
 
-.menu:after {
-  content: "]";
-}
+@font-face {
+  font-family: EurostileStandardOblique;
+  src: url("fonts/EurostileLTStd-Oblique.otf"); }
 
-.menu > li {
-  display: inline;
-}
+@font-face {
+  font-family: EurostileStandardBoldOblique;
+  src: url("fonts/EurostileLTStd-BoldOblique.otf"); }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
+@font-face {
+  font-family: BankGothicMediumBT;
+  src: url("fonts/Bank Gothic Medium BT.ttf"); }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+@font-face {
+  font-family: BankGothicHD;
+  src: url("fonts/bankgthd.ttf"); }
+
+body, button {
+  font-family: EurostileStandard; }
+
+strong {
+  font-family: EurostileStandardBold;
+  font-weight: normal; }
+
+em {
+  font-family: EurostileStandardOblique;
+  font-style: normal; }
+
+strong em, em strong {
+  font-family: EurostileStandardBoldOblique;
+  font-style: normal;
+  font-weight: normal; }
