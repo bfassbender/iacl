@@ -6,7 +6,7 @@ angular.module('iaclApp').controller('MainCtrl', ['heroService', function (heroS
 
     vm.heroes = heroService.getHeroes();
 
-    vm.searchInput = "";
+    vm.searchInput;
 
     vm.orders = [
         {
