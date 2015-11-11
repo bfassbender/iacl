@@ -1,12 +1,8 @@
 'use strict';
 
-angular.module('iaclApp').controller("MainController", function () {
-    var vm = this;
-    vm.title = 'Welcome to the Imperial Assault Campaign Logger';
+angular.module('iaclApp').factory("heroService", function () {
 
-    vm.searchInput = '';
-
-    vm.heroes = [
+    var heroes = [
         {
             name: 'Diala Passil',
             wave: 'Starter Box',
@@ -57,25 +53,9 @@ angular.module('iaclApp').controller("MainController", function () {
         }
     ];
 
-    vm.orders = [
-        {
-            id: 1,
-            title: 'Name Ascending',
-            key: 'name',
-            reverse: false
-        },
-        {
-            id: 2,
-            title: 'Name Descending',
-            key: 'name',
-            reverse: true
+    return {
+        getHeroes: function() {
+            return heroes;
         }
-    ];
-    vm.order = vm.orders[0];
-
-    vm.newHero = {};
-    vm.addHero = function () {
-        vm.heroes.push(vm.newHero);
-        vm.newHero = {};
     };
 });
