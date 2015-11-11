@@ -3,11 +3,9 @@
 angular.module('iaclApp').controller('MainCtrl', ['heroService', function (heroService) {
 
     var vm = this;
-
+	vm.title = "Imperial Assault Campaign Logger";
     vm.heroes = heroService.getHeroes();
-
     vm.searchInput;
-
     vm.orders = [
         {
             id: 1,

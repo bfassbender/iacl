@@ -28,7 +28,17 @@
   src: url("fonts/bankgthd.ttf"); }
 
 body, button {
-  font-family: EurostileStandard; }
+  font-family: EurostileStandard; 
+  color: #ededed;
+  background-attachment: fixed;
+  background-image: url("img/imperial_assault_by_1darthvader_deviantart.jpg");
+  background-position:              50% 50%;
+  background-repeat:                no-repeat;
+  background-size:                    cover; }
+
+.container {
+  background: rgba(0,0,0,0.8);
+  padding: 20px}
 
 strong {
   font-family: EurostileStandardBold;
