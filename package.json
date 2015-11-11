@@ -1,10 +1,10 @@
 {
   "name": "iacl",
-  "private": true,
   "version": "0.0.1",
   "description": "IACL - an Imperial Assault Campaign Logger",
   "repository": "https://github.com/bknobloch/iacl",
   "license": "MIT",
+  "private": true,
   "devDependencies": {
     "bower": "^1.6.5",
     "http-server": "^0.8.5",
