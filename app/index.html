@@ -16,6 +16,7 @@
     <script src="app.js"></script>
     <script src="controller/mainCtrl.js"></script>
     <script src="service/heroService.js"></script>
+    <script src="service/campaignService.js"></script>
 </head>
 <body ng-app="iaclApp" ng-controller="MainCtrl as main">
 <div class="container">
@@ -23,42 +24,21 @@
 
     <h3>Choose up to 4 heroes</h3>
 
-    <div class="input-group">
-        <span class="input-group-addon">
-            <span class="glyphicon glyphicon-search"></span>
-        </span>
-        <input type="text" class="form-control" ng-model="main.searchInput">
-    </div>
-    <div class="input-group">
-		<label>Order</label><select class="form-control" ng-model="main.order"
-                   ng-options="order as order.title for order in main.orders"></select>
-	 </div>
-	 <br/>
     <ul class="list-inline">
-        <li ng-repeat="hero in main.heroes  | filter:{name:main.searchInput} | orderBy:main.order.key:main.order.reverse">
-            <img ng-src="{{hero.images.portrait}}"/>
+        <li ng-repeat="hero in main.heroes | orderBy:main.order.key:main.order.reverse">
+            <img ng-src="{{hero.images.portrait}}" ng-click="main.addHero(hero)"/>
             <h4>{{hero.name}}</h4>
             <span class="label label-default">{{hero.wave}}</span></li>
     </ul>
 
-    <h3>Add a new Hero</h3>
+    <h3>Heroes selected for this Campaign</h3>
+    <ul class="list-inline">
+        <li ng-repeat="hero in main.getCampaignHeroes()">
+            <img ng-src="{{hero.images.portrait}}" ng-click="main.removeHero(hero)"/>
+            <h4>{{hero.name}}</h4></li>
+    </ul>
 
-    <form name="main.addForm" class="form" ng-submit="main.addHero()">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" ng-model="main.newHero.name" required/>
-        </div>
-        <div class="form-group">
-            <label>Wave</label>
-            <input type="text" class="form-control" ng-model="main.newHero.wave" required/>
-        </div>
-        <div class="form-group">
-            <label>Image-URL</label>
-            <input type="text" class="form-control" ng-model="main.newHero.image" required/>
-        </div>
-        <button class="btn btn-success pull-left"><span class="glyphicon glyphicon-plus-sign"></span> Add
-        </button>
-    </form>
+
 </div>
 </body>
 </html>

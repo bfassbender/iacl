@@ -1,11 +1,12 @@
 'use strict';
 
-angular.module('iaclApp').controller('MainCtrl', ['heroService', function (heroService) {
+angular.module('iaclApp').controller('MainCtrl', ['heroService','campaignService', function (heroService, campaignService) {
 
     var vm = this;
 	vm.title = "Imperial Assault Campaign Logger";
+    vm.searchInput = "";
     vm.heroes = heroService.getHeroes();
-    vm.searchInput;
+
     vm.orders = [
         {
             id: 1,
@@ -22,11 +23,20 @@ angular.module('iaclApp').controller('MainCtrl', ['heroService', function (heroS
     ];
     vm.order = vm.orders[0];
 
-    vm.newHero = {};
-    vm.addHero = function () {
-        vm.heroes.push(vm.newHero);
-        vm.newHero = {};
+    vm.addHero = function (hero) {
+        campaignService.addHero(hero);
+
     };
+
+    vm.removeHero = function (hero) {
+        campaignService.removeHero(hero);
+
+    };
+
+    vm.getCampaignHeroes = function() {
+      return campaignService.getHeroes();
+    };
+
 
 }]);
 
