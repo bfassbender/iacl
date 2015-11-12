@@ -21,15 +21,15 @@ angular.module('iaclApp').factory('campaignService', function() {
         },
 
         addHero: function(hero) {
-            for(var i = 0; i < heroes.length; ++i)
-            {
-                if(heroes[i].name == hero.name)
-                {
-                    heroes[i] = hero;
-                    return;
+            if(heroes.length < MAX_HEROES) {
+                for (var i = 0; i < heroes.length; ++i) {
+                    if (heroes[i].name == hero.name) {
+                        heroes[i] = hero;
+                        return;
+                    }
                 }
+                heroes.push(hero);
             }
-            heroes.push(hero);
         },
 
         removeHero: function(hero) {

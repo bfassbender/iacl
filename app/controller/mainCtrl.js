@@ -33,6 +33,10 @@ angular.module('iaclApp').controller('MainCtrl', ['heroService','campaignService
 
     };
 
+    vm.isCampaignValid = function () {
+        return campaignService.isValid;
+    };
+
     vm.getCampaignHeroes = function() {
       return campaignService.getHeroes();
     };
