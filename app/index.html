@@ -12,12 +12,6 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="app.css">
 
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
-    <script src="app.js"></script>
-    <script src="controller/mainCtrl.js"></script>
-    <script src="service/heroService.js"></script>
-    <script src="service/campaignService.js"></script>
 </head>
 <body ng-app="iaclApp" ng-controller="MainCtrl as main">
 <div class="container">
@@ -38,8 +32,14 @@
             <img ng-src="{{hero.images.portrait}}" ng-click="main.removeHero(hero)"/>
             <h4>{{hero.name}}</h4></li>
     </ul>
-
-
 </div>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+<script src="app.js"></script>
+<script src="controller/mainCtrl.js"></script>
+<script src="service/heroService.js"></script>
+<script src="service/campaignService.js"></script>
+
 </body>
 </html>

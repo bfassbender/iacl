@@ -1,10 +1,11 @@
 'use strict';
 
 
-describe('Campaign Service', function() {
+describe('CampaignService', function() {
 
 
     beforeEach(module('iaclApp'));
+
 
     it('should exist', inject(function (campaignService) {
         expect(campaignService).toBeDefined();
@@ -29,11 +30,11 @@ describe('Campaign Service', function() {
     }));
 
     it('addHero() called multiple times with heroes having the same name should only result in the last hero being added', inject(function (campaignService) {
-        var firstHero = {name: 'one'};
-        var secondHero = {name: 'one'};
+        var firstHero = {name: 'one', modifier: 'a'};
+        var secondHero = {name: 'one', modifier: 'b'};
         campaignService.addHero(firstHero);
         campaignService.addHero(secondHero);
-        expect(campaignService.getHeroes()[0]).toBe(secondHero);
+        expect(campaignService.getHeroes()[0]).toEqual(secondHero);
     }));
 
     it('addHero() lets only 4 heroes be added', inject(function (campaignService) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iaclApp').factory('campaignService', function() {
+angular.module('iaclApp').factory('campaignService', ['localStorageService', function(localStorageService) {
 
     var MAX_HEROES = 4;
     var name = "";
@@ -17,6 +17,10 @@ angular.module('iaclApp').factory('campaignService', function() {
         },
 
         getHeroes: function() {
+            var heroes_stored = localStorageService.get('heroes');
+            if(heroes_stored) {
+                heroes = heroes_stored;
+            }
             return heroes;
         },
 
@@ -25,10 +29,12 @@ angular.module('iaclApp').factory('campaignService', function() {
                 for (var i = 0; i < heroes.length; ++i) {
                     if (heroes[i].name == hero.name) {
                         heroes[i] = hero;
+                        localStorageService.set('heroes', heroes);
                         return;
                     }
                 }
                 heroes.push(hero);
+                localStorageService.set('heroes', heroes);
             }
         },
 
@@ -38,6 +44,7 @@ angular.module('iaclApp').factory('campaignService', function() {
                 if(heroes[i].name == hero.name)
                 {
                     heroes.splice(i, 1);
+                    localStorageService.set('heroes', heroes);
                     return;
                 }
             }
@@ -48,4 +55,4 @@ angular.module('iaclApp').factory('campaignService', function() {
         }
     };
 
-});
+}]);
