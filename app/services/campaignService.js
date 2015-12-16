@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iaclApp').factory('campaignService', ['localStorageService', function(localStorageService) {
+angular.module('iaclApp').factory('campaignService', ['localStorageService', function (localStorageService) {
 
     var MAX_HEROES = 4;
     var name = "";
@@ -12,20 +12,19 @@ angular.module('iaclApp').factory('campaignService', ['localStorageService', fun
             return name;
         },
 
-        getLeader: function() {
+        getLeader: function () {
             return leader;
         },
 
-        getHeroes: function() {
-            var heroes_stored = localStorageService.get('heroes');
-            if(heroes_stored) {
-                heroes = heroes_stored;
+        getHeroes: function () {
+            if (heroes.length == 0) {
+                heroes = localStorageService.get('heroes');
             }
             return heroes;
         },
 
-        addHero: function(hero) {
-            if(heroes.length < MAX_HEROES) {
+        addHero: function (hero) {
+            if (heroes.length < MAX_HEROES) {
                 for (var i = 0; i < heroes.length; ++i) {
                     if (heroes[i].name == hero.name) {
                         heroes[i] = hero;
@@ -38,11 +37,9 @@ angular.module('iaclApp').factory('campaignService', ['localStorageService', fun
             }
         },
 
-        removeHero: function(hero) {
-            for(var i = 0; i < heroes.length; ++i)
-            {
-                if(heroes[i].name == hero.name)
-                {
+        removeHero: function (hero) {
+            for (var i = 0; i < heroes.length; ++i) {
+                if (heroes[i].name == hero.name) {
                     heroes.splice(i, 1);
                     localStorageService.set('heroes', heroes);
                     return;
@@ -50,7 +47,7 @@ angular.module('iaclApp').factory('campaignService', ['localStorageService', fun
             }
         },
 
-        isValid: function() {
+        isValid: function () {
             return heroes.length > 0 && heroes.length <= MAX_HEROES;  //max 4 Heroes per Campaign
         }
     };

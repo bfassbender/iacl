@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (config) {
     config.set({
 
@@ -5,11 +7,12 @@ module.exports = function (config) {
 
         files: [
             'app/bower_components/angular/angular.js',
+            'app/bower_components/angular-route/angular-route.js',
             'app/bower_components/angular-local-storage/dist/angular-local-storage.js',
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/app.js',
-            'app/service/**/*.js',
-            'app/controller/**/*.js'
+            'app/services/**/*.js',
+            'app/controllers/**/*.js'
         ],
 
         autoWatch: true,

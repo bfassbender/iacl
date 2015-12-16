@@ -15,31 +15,16 @@
 </head>
 <body ng-app="iaclApp" ng-controller="MainCtrl as main">
 <div class="container">
-    <h1>{{main.title}}</h1>
-
-    <h3>Choose up to 4 heroes</h3>
-
-    <ul class="list-inline">
-        <li ng-repeat="hero in main.heroes | orderBy:main.order.key:main.order.reverse">
-            <img ng-src="{{hero.images.portrait}}" ng-click="main.addHero(hero)"/>
-            <h4>{{hero.name}}</h4>
-            <span class="label label-default">{{hero.wave}}</span></li>
-    </ul>
-
-    <h3>Heroes selected for this Campaign</h3>
-    <ul class="list-inline">
-        <li ng-repeat="hero in main.getCampaignHeroes()">
-            <img ng-src="{{hero.images.portrait}}" ng-click="main.removeHero(hero)"/>
-            <h4>{{hero.name}}</h4></li>
-    </ul>
+    <div ng-view></div>
 </div>
 
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 <script src="app.js"></script>
-<script src="controller/mainCtrl.js"></script>
-<script src="service/heroService.js"></script>
-<script src="service/campaignService.js"></script>
+<script src="controllers/mainCtrl.js"></script>
+<script src="services/heroService.js"></script>
+<script src="services/campaignService.js"></script>
 
 </body>
 </html>

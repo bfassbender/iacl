@@ -11,6 +11,6 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "bootstrap": "~3.3.5",
-    "angular-local-storage": "~0.2.3"
+    "angular-local-storage": "~0.2.0"
   }
 }

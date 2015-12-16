@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<h1>{{main.title}}</h1>
 
-</body>
-</html>
+<h3>Choose up to 4 heroes</h3>
+
+<ul class="list-inline">
+    <li ng-repeat="hero in main.heroes | orderBy:main.order.key:main.order.reverse">
+        <img ng-src="{{hero.images.portrait}}" ng-click="main.addHero(hero)"/>
+        <h4>{{hero.name}}</h4>
+        <span class="label label-default">{{hero.wave}}</span></li>
+</ul>
+
+<h3>Heroes selected for this Campaign</h3>
+<ul class="list-inline">
+    <li ng-repeat="hero in main.getCampaignHeroes()">
+        <img ng-src="{{hero.images.portrait}}" ng-click="main.removeHero(hero)"/>
+        <h4>{{hero.name}}</h4></li>
+</ul>

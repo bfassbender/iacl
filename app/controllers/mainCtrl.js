@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iaclApp').controller('MainCtrl', ['heroService','campaignService', function (heroService, campaignService) {
+app.controller('MainCtrl', ['heroService','campaignService', function (heroService, campaignService) {
 
     var vm = this;
 	vm.title = "Imperial Assault Campaign Logger";
